@@ -1,0 +1,52 @@
+{% extends "skl_two_col_input.html" %}
+{% block title %} Despachante {% endblock %}
+{% block data %}
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Gastos</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for item in gastos %}
+
+        <tr>
+            <td> {{ item.despachante }} </td>
+            <td> {{ item.price }}</td>
+        </tr>
+
+        {% endfor%}
+        </tbody>
+    </table>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>CIF Low</th>
+                <th>CIF Up</th>
+                <th>Percentage</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for item in honorarios %}
+
+        <tr>
+            <td> {{ item.cif_low }}</td>
+            <td> {{ item.cif_up }}</td>
+            <td> {{ item.percentage }}</td>
+        </tr>
+
+        {% endfor%}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+{% block summary %}<div class="alert alert-info" role="alert">1500 USD</DIV>
+{% endblock %}

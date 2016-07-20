@@ -1,0 +1,34 @@
+{% extends "skl_one_col.html" %}
+{% block title %} Machine {% endblock %}
+{% block comment %} Choose {% endblock %} 
+{% block data %}
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>kind</th>
+                <th>brand</th>
+                <th>length</th>
+                <th>width</th>
+                <th>height</th>
+                <th>weight</th>
+            </tr>
+        </thead>
+
+        <tbody id="machine_select" >
+        {% for item in machine %}
+        <tr id={{ item.id }}>
+
+            <th scope=row> {{ item.kind }}</th>
+            <th scope=row>{{ item.brand }} {{item.model}}</td>
+            <td>{{ item.length }}</td>
+            <td>{{ item.width }}</td>
+            <td>{{ item.height }}</td>
+            <td>{{ item.weight }}</td>
+
+        </tr>
+        {% endfor%}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

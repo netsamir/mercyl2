@@ -1,13 +1,8 @@
 from django import forms
 
-from .models import (Customer, Machine, Transport, TaxCountry, CustomUruguay,
+from .models import (Machine, Transport, TaxCountry, CustomUruguay,
         TasaServicioAduana, ExtraordinarioPrice, PortPrice, CustomBrokerPrice)
 
-class CustomerForm(forms.ModelForm):
-    class Meta:
-        model = Customer
-        fields = ['email', 'phone', 'fullname', 'purchase', 'contacted',
-                'city', 'country']
 
 class MachineForm(forms.ModelForm):
     class Meta:

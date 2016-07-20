@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block head_title %} Calculate the price of the transport {% endblock %}
+<style> {% block style %}
+<link href="{{ static('css/machine_price.css') }}" rel="stylesheet">
+{% endblock %} </style>
+
+{% block content %}
+<div class="starter-template">
+    <header></header>
+    <main role="main">
+    <div class="row">
+        <section> <!-- Input -->
+            <div class="col-md-8">
+                {% include "price_input.html" %}
+                {% include "transport_montevideo_input.html" %}
+                {% include "transport.html" %}
+                {% include "transport_to_anvers.html"  %}
+                {% include "cost_of_purchase.html" %}
+                {% include "cif.html" %}
+                {% include "aduana.html" %}
+                {% include "despachante.html" %}
+                {% include "kma.html" %}
+                {% include "cost_of_sell.html" %}
+                {% include "bank_cost.html" %}
+            </div>
+        </section>
+        <section>
+            <div class="col-md-4">
+                {% include "balance_sell.html" %}
+            </div>
+        </section>
+    </div>
+    </main>
+    <footer></footer> <!-- Footer -->
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{{ static('js/machine_price.js') }}"></script>
+{% endblock %}
+<!--
+
+    context = {
+        'title' : title,
+        'machine' : machines,
+        'transport' : transports,
+        'taxcountry' : taxcountrys,
+        'aduana' : aduanas,
+        'flete' : fletes,
+        'kma' : kmas,
+        'inspection' : inspections,
+        'tsa' : tsas,
+        'extraordinario' : extraordinarios,
+        'puerto' : puertos,
+        'gastos' : gastoss,
+        'honorarios' : honorarioss,
+        'transport_anvers' : transport_anverss,
+        'fix_cost' : fix_costs,
+        'taxes' : taxess,
+        'investment' : investments,
+        'bucket' : buckets,
+        'cost_sell' : cost_sells,
+        'cost_purchase' : cost_purchases,
+        'bank_cost' : bank_costs,
+    -->

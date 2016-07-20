@@ -1,0 +1,51 @@
+{% extends "skl_two_col_input.html" %}
+{% block title %}Aduana {% endblock %}
+{% block data %}
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th></th>
+                <th>price</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for item in aduana %}
+        <tr>
+            <th>City</th>
+            <td> {{ item.city }}</th>
+        </tr>
+        <tr>
+            <th>Guia de transito</th>
+            <td> {{ item.guia_de_transito }} </td>
+        </tr>
+        <tr>
+            <th>Timbre Profesional</th>
+            <td> {{ item.timbre_profesional }}</td>
+        </tr>
+        <tr>
+            <th>Recargo</th>
+            <td> {{ item.recargo }} </td>
+        </tr>
+        <tr>
+            <th>IVA</th>
+            <td> {{ item.iva }} </td>
+        </tr>
+        <tr>
+            <th>Anticipo IVA</th>
+            <td> {{ item.anticipo_iva }}</td>
+        </tr>
+        <tr>
+            <th>Cert. Empadronamiento</th>
+            <td> {{ item.cert_empadronamiento }} </td>
+        </tr>
+
+        {% endfor%}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+{% block summary %}<div class="alert alert-info" role="alert">24500 USD</DIV>
+{% endblock %}
